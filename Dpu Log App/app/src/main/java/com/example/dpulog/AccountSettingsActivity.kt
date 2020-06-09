@@ -54,6 +54,12 @@ class AccountSettingsActivity : AppCompatActivity()
             finish()
         }
 
+        close_profile_btn.setOnClickListener {
+            val intent = Intent(this@AccountSettingsActivity, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
 
         change_image_text_btn.setOnClickListener {
             checker = "clicked"
