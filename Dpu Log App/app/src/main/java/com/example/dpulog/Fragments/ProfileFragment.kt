@@ -74,7 +74,7 @@ class ProfileFragment : Fragment() {
 
         if (profileId == firebaseUser.uid)
         {
-            view.edit_account_settings_btn.text = "Edit Profile"
+            view.edit_account_settings_btn.text = "Profili Düzenle"
         }
         else if (profileId != firebaseUser.uid)
         {
@@ -149,9 +149,9 @@ class ProfileFragment : Fragment() {
 
             when
             {
-                getButtonText == "Edit Profile" -> startActivity(Intent(context, AccountSettingsActivity::class.java))
+                getButtonText == "Profili Düzenle" -> startActivity(Intent(context, AccountSettingsActivity::class.java))
 
-                getButtonText == "Follow" -> {
+                getButtonText == "Takip et" -> {
 
                     firebaseUser?.uid.let { it1 ->
                         FirebaseDatabase.getInstance().reference
@@ -170,7 +170,7 @@ class ProfileFragment : Fragment() {
                     addNotification()
                 }
 
-                getButtonText == "Following" -> {
+                getButtonText == "Takip Ediliyor" -> {
 
                     firebaseUser?.uid.let { it1 ->
                         FirebaseDatabase.getInstance().reference
@@ -217,11 +217,11 @@ class ProfileFragment : Fragment() {
                 {
                     if (p0.child(profileId).exists())
                     {
-                        view?.edit_account_settings_btn?.text = "Following"
+                        view?.edit_account_settings_btn?.text = "Takip Ediliyor"
                     }
                     else
                     {
-                        view?.edit_account_settings_btn?.text = "Follow"
+                        view?.edit_account_settings_btn?.text = "Takip et"
                     }
                 }
 

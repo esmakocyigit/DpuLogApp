@@ -199,7 +199,7 @@ class PostAdapter
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists())
                 {
-                    likes.text = p0.childrenCount.toString() + " likes"
+                    likes.text = p0.childrenCount.toString() + " beğeniler"
                 }
             }
 
@@ -220,7 +220,7 @@ class PostAdapter
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists())
                 {
-                    comments.text = "view all " + p0.childrenCount.toString() + " comments"
+                    comments.text = "view all " + p0.childrenCount.toString() + " yorumlar"
                 }
             }
 
@@ -352,7 +352,7 @@ class PostAdapter
 
         val notiMap = HashMap<String, Any>()
         notiMap["userid"] = firebaseUser!!.uid
-        notiMap["text"] = "liked your post"
+        notiMap["text"] = "gönderinizi beğendi "
         notiMap["postid"] = postId
         notiMap["ispost"] = true
 

@@ -31,7 +31,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Comments"
+                        android:text="Yorumlar"
                         android:textSize="18sp"
                         android:maxLines="1"
                         android:textStyle="bold"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
-                android:text="Publish"
+                android:text="Yayınla"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:textSize="18dp"

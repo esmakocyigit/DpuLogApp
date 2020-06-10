@@ -67,7 +67,7 @@ class UserAdapter (private var mContext: Context,
         })
 
         holder.followButton.setOnClickListener {
-            if(holder.followButton.text.toString() == "Follow")
+            if(holder.followButton.text.toString() == "Takip et")
             {
                 firebaseUser?.uid.let { it1 ->
                     FirebaseDatabase.getInstance().reference
@@ -140,11 +140,11 @@ class UserAdapter (private var mContext: Context,
             {
                 if (datasnapshot.child(uid).exists())
                 {
-                    followButton.text = "Following"
+                    followButton.text = "Takip Ediliyor"
                 }
                 else
                 {
-                    followButton.text = "Follow"
+                    followButton.text = "Takip et"
                 }
             }
 
@@ -163,7 +163,7 @@ class UserAdapter (private var mContext: Context,
 
         val notiMap = HashMap<String, Any>()
         notiMap["userid"] = firebaseUser!!.uid
-        notiMap["text"] = "started following you"
+        notiMap["text"] = "sizi takip etmeye başladı"
         notiMap["postid"] = ""
         notiMap["ispost"] = false
 
