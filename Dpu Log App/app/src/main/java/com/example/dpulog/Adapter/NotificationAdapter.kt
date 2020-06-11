@@ -139,7 +139,10 @@ class NotificationAdapter(
                 {
                     val user = p0.getValue<User>(User::class.java)
 
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(imageView)
+                    if(!user!!.getImage().equals(""))
+                    {
+                        Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(imageView)
+                    }
                     userName.text = user!!.getUsername()
                 }
             }
@@ -167,7 +170,10 @@ class NotificationAdapter(
                 {
                     val post = p0.getValue<Post>(Post::class.java)
 
-                    Picasso.get().load(post!!.getPostimage()).placeholder(R.drawable.profile).into(imageView)
+                    if(!post!!.getPostimage().equals(""))
+                    {
+                        Picasso.get().load(post!!.getPostimage()).placeholder(R.drawable.profile).into(imageView)
+                    }
                 }
             }
 

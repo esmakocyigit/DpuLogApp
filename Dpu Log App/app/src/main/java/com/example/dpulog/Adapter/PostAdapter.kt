@@ -48,7 +48,10 @@ class PostAdapter
 
         val post = mPost[position]
 
-        Picasso.get().load(post.getPostimage()).into(holder.postImage)
+        if (!post.getPostimage().equals(""))
+        {
+            Picasso.get().load(post.getPostimage()).into(holder.postImage)
+        }
 
         if (post.getDescription().equals(""))
         {
